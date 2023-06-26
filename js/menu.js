@@ -4,7 +4,7 @@ const navOverlay = document.querySelector('.nav__overlay');
 burguerIcon.addEventListener("click", () => {
   burguerIcon.classList.toggle("nav__burguer--open");
 
-  navOverlay.classList.toggle("nav__overlay--show");
+  navOverlay.classList.toggle("nav__overlay--view");
 });
 
 navOverlay.addEventListener("click", (e) => {
@@ -26,7 +26,7 @@ navOverlay.addEventListener("click", (e) => {
       subMenu.style.height = `${height}px`; 
 
     }else{
-
+      subMenu.classList.toggle('nav__inner--view');
     }
   }
 
@@ -35,3 +35,13 @@ navOverlay.addEventListener("click", (e) => {
 function isActive(element, string){
   return element.classList.value.includes(string);
 }
+
+window.addEventListener('resize', ()=>{
+  if (window.innerWidth > 700) {
+    const navInner = document.querySelectorAll('.nav__inner');
+
+    navInner.forEach(navIn => {
+      navIn.style.height = '';
+    })
+  }
+})
