@@ -13,12 +13,52 @@ body{
     font-family: 'Epilogue',sans-serif;
 }
 
+.nav{
+    display: flex;
+    height: 70px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    max-width: 1200px;
+}
+
 .nav__burguer{
     width: 50px;
-    height: 50px;
+    height: 50%;
     background-image: url("../images/icon-menu.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-color: turquoise;
     cursor: pointer;
+
+    z-index: 100;
+    transition: background-image .3s;
+}
+.nav__burguer--open{
+    background-image: url("../images/icon-close-menu.svg");
+}
+
+.nav__overlay{
+    background-color: #000000a9;
+    inset: 0;
+    position: fixed;
+}
+
+.nav__menu{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+    right: 0;
+    width: 50%;
+    max-width: 400px;
+    padding: 0;
+    list-style: none;
+    overflow: auto;
+    padding: 60px 10px;
 }
