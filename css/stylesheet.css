@@ -47,6 +47,14 @@ body{
     background-color: #000000a9;
     inset: 0;
     position: fixed;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: .5s opacity;
+}
+.nav__overlay--view{
+    opacity: 1;
+    pointer-events: unset;
 }
 
 .nav__menu{
@@ -61,4 +69,57 @@ body{
     list-style: none;
     overflow: auto;
     padding: 60px 10px;
+}
+
+.nav__item{
+    width: 80%;
+    margin: 0 auto;
+    color: var(--Almost-Black);
+    cursor: pointer;
+    padding: 20px 0;
+}
+.nav__item:has(.nav__parent){
+    padding: 0;
+}
+.nav__inner{
+    list-style: none;
+    padding: 0;
+    width: 80%;
+    margin: auto;
+    display: grid;
+    gap: 1.5em;
+    overflow: hidden;
+    height: 0px;
+    transition: height .4s;
+}
+.nav__parent{
+    display: grid;
+    align-items: center;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 1.3em;
+    padding: 20px 0;
+}
+
+.nav__link{
+    text-decoration: none;
+    color: var(--Almost-Black);
+}
+
+.nav__login{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+.nav__login--border{
+    border: 1px solid var(--Medium-Gray);
+    border-radius: 100%;
+    margin-top: 10px;
+}
+
+.nav__sign{
+    display: inline-block;
+    color:var(--Medium-Gray);
+    padding: 1em 0;
+    text-decoration: none;
 }
